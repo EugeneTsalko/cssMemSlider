@@ -17,19 +17,20 @@ body {
 
 .wrapper {
   background-color: #4D4C7D;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   max-width: 550px;
   height: 600px;
   width: 100%;
   display: flex;
   flex-direction: column;
-   
   overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px 0px black;
 }
 
 .slider {
   background-color: #E9D5DA;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 400%;
   height: 100%; 
   display: flex;
@@ -46,7 +47,7 @@ img {
 
 .navigation {
   background-color: #827397;
-  border: 2px solid rgb(249, 249, 4);
+  /* border: 2px solid rgb(249, 249, 4); */
   width: 100%;
   height: 50px;
   display: flex;
@@ -60,7 +61,7 @@ img {
 }
 
 .text {
-  border: 2px solid rgb(4, 255, 0);
+  /* border: 2px solid rgb(4, 255, 0); */
   width: 400%;
   display: flex;
   overflow: hidden;
@@ -73,23 +74,34 @@ img {
 }
 
 .buttons {
-  border: 2px solid rgb(0, 42, 255);
+  /* border: 2px solid rgb(0, 42, 255); */
   width: 25%;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 label {
-  background-color: aqua;
-  margin: 1px;
-  height: 10px;
-  width: 10px;
+  background-color: transparent;
+  /* margin: 5px; */
+  height: 2em;
+  width: 2em;
   transition: ease-in-out 0.3;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-label:hover {
+.button {
+  /* border: solid 3px #E9D5DA; */
+  height: 1em;
+  width: 1em;
+  background-color: #E9D5DA;
+  border-radius: 50%;
+}
+
+label:hover > .button {
   background-color: beige;
 }
 
@@ -97,6 +109,13 @@ input[name="radioinput"] {
   visibility: hidden;
   height: 0%;
   width: 0%;
+}
+
+#radio1:checked ~ .navigation > .buttons > label[for="radio1"] > .button,
+#radio2:checked ~ .navigation > .buttons > label[for="radio2"] > .button,
+#radio3:checked ~ .navigation > .buttons > label[for="radio3"] > .button,
+#radio4:checked ~ .navigation > .buttons > label[for="radio4"] > .button {
+  background-color: aqua;
 }
 
 #radio1:checked ~ .slider > .s1 {

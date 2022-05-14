@@ -52,10 +52,10 @@ img {
   justify-content: space-between;
 }
 
-/* .text-container {
-  max-width: 25%;
+.text-container {
+  width: 150px;
   overflow: hidden;
-} */
+}
 
 .text {
   border: 2px solid rgb(4, 255, 0);
@@ -64,7 +64,7 @@ img {
   overflow: hidden;
 }
 
-.text-value {
+.text-content {
   width: 25%;
 }
 
@@ -93,4 +93,30 @@ input[name="radioinput"] {
   visibility: hidden;
   height: 0%;
   width: 0%;
+}
+
+#radio1:checked ~ .slider > .s1 {
+  margin-left: 0;
+}
+#radio2:checked ~ .slider > .s1 {
+  margin-left: -25%;
+}
+#radio3:checked ~ .slider > .s1 {
+  margin-left: -50%;
+}
+#radio4:checked ~ .slider > .s1 {
+  margin-left: -75%;
+}
+
+#radio1:checked ~ .navigation > .text-container > .text > .t1 {
+  margin-left: 0;
+}
+#radio2:checked ~ .navigation > .text-container > .text > .t1 {
+  margin-left: -25%;
+}
+#radio3:checked ~ .navigation > .text-container > .text > .t1 {
+  margin-left: -50%;
+}
+#radio4:checked ~ .navigation > .text-container > .text > .t1 {
+  margin-left: -75%;
 }

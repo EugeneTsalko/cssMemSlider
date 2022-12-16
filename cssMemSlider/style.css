@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(64, 223, 239);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 50%;
+  width: 100%;
+  max-height: 60%;
+  min-width: 32em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 550px) {
+  .wrapper {
+    min-width: 1em;
+    max-width: 90%;
+    width: 100%;
+    margin: 0 1em;
+    height: auto;
+  }
+}
+
+.slider {
+  background-color: white;
+  width: 400%;
+  height: 90%; 
+  display: flex;
+}
+
+@media screen and (max-width: 550px) {
+  .slider {
+    max-height: 80%;
+  }
+}
+
+.slide {
+  width: 25%;
+  transition: 1s;
+  display: flex;
+}
+
+img {
+  object-fit: cover;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.navigation {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 550px) {
+  .navigation {
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    height: 20%;
+  }
+}
+
+.text-container {
+  width: 70%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 550px) {
+  .text-container {
+    width: 100%;
+  }
+}
+
+.text {
+  width: 400%;
+  display: flex;
+  overflow: hidden;
+}
+
+.text-content {
+  width: 25%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3em;
+  color: black;
+  transition: 1s;
+}
+
+@media screen and (max-width: 550px) {
+  .text-content {
+    font-size: 1em;
+  }
+}
+
+.buttons {
+  max-width: 9em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 550px) {
+  .text-container {
+    max-width: 100%;
+  }
+}
+
+label {
+  background-color: transparent;
+  height: 2em;
+  width: 2em;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  height: 1em;
+  width: 1em;
+  background-color: white;
+  border-radius: 50%;
+  transition: ease-in-out 0.3s;
+}
+
+label:hover .button {
+  background-color: rgb(185, 248, 211);
+  transform: scale(1.2);
+  box-shadow: 0em 0em 0.2em black;
+}
+
+label:active .button {
+  transform: scale(0.8);
+}
+
+input[name="radioinput"] {
+  visibility: hidden;
+  height: 0%;
+  width: 0%;
+}
+
+.footer {
+  max-width: 50%;
+  width: 100%;
+  min-width: 32em;
+  max-height: 5%;
+  height: 100%;
+  background-color: rgb(255, 251, 231);
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  box-shadow: 0em -0.1em 0.5em 0em rgb(255, 251, 231);
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 550px) {
+  .footer {
+    min-width: 1em;
+    max-width: 90%;
+    width: 100%;
+  }
+}
+
+.footer-container {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 550px) {
+  .footer-container {
+    font-size: 0.8em;
+  }
+}
+
+.footer-link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+.footer-link:hover {
+  color: rgb(64, 223, 239);
+}
+#radio1:checked ~ .navigation > .buttons > label[for="radio1"] > .button,
+#radio2:checked ~ .navigation > .buttons > label[for="radio2"] > .button,
+#radio3:checked ~ .navigation > .buttons > label[for="radio3"] > .button,
+#radio4:checked ~ .navigation > .buttons > label[for="radio4"] > .button {
+  background-color: rgb(231, 142, 169);
+  transform: scale(1.1);
+}
+
+#radio1:checked ~ .slider > .s1 {
+  margin-left: 0;
+}
+#radio2:checked ~ .slider > .s1 {
+  margin-left: -25%;
+}
+#radio3:checked ~ .slider > .s1 {
+  margin-left: -50%;
+}
+#radio4:checked ~ .slider > .s1 {
+  margin-left: -75%;
+}
+
+#radio1:checked ~ .navigation > .text-container > .text > .t1 {
+  margin-left: 0;
+}
+#radio2:checked ~ .navigation > .text-container > .text > .t1 {
+  margin-left: -25%;
+}
+#radio3:checked ~ .navigation > .text-container > .text > .t1 {
+  margin-left: -50%;
+}
+#radio4:checked ~ .navigation > .text-container > .text > .t1 {
+  margin-left: -75%;
+}
